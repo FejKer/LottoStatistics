@@ -61,7 +61,16 @@ public class DataScraper {
         FileReader reader = new FileReader(game + ".json");
         Object obj = jsonParser.parse(reader);
         list = (JSONArray) obj;
-        JSONObject firstObj = (JSONObject) list.get(0);
+        JSONObject firstObj = null;
+        try{
+            firstObj = (JSONObject) list.get(0);
+        } catch(IndexOutOfBoundsException e) {
+            e.printStackTrace();
+            File file = new File(game + ".json");
+            file.delete();
+            getRaffles();
+        }
+
         JSONObject firstChild = (JSONObject) firstObj.get("Draw");
 
         String dateFile = (String) firstChild.get("Date");
@@ -83,7 +92,7 @@ public class DataScraper {
 
         System.out.println(url);
         updating = true;
-        updateRaffles();
+        getRaffles();
     }
 
     private void getRaffles() throws IOException {
