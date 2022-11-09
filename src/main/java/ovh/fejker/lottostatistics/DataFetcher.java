@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 public class DataFetcher {
 
@@ -30,7 +31,7 @@ public class DataFetcher {
         System.out.println("ARRAY" + array);
 
         for(Object obj : array) {
-            boolean isSpecial = false;
+            boolean isSpecial = true;
             long id;
             String date;
             String type;
@@ -41,28 +42,26 @@ public class DataFetcher {
             System.out.println("CHILD" + child);
             JSONArray childArray = new JSONArray(child.getJSONArray("results"));
 
-            for(Object obj2 : childArray) {
-                JSONObject child2 = new JSONObject(obj2.toString());
-                JSONArray childArray2 = new JSONArray(child2.getJSONArray("resultsJson"));
-                results = new int[childArray2.length()];
-                int i = 0;
-                for(Object obj3 : childArray2) {
-                    results[i] = (int) obj3;
-                    i++;
-                }
+            JSONObject child2 = new JSONObject(childArray.get(0).toString());
+            System.out.println(child2);
+            JSONArray childArray2 = new JSONArray(child2.getJSONArray("resultsJson"));
+            results = new int[childArray2.length()];
+            int i = 0;
+            for(Object obj3 : childArray2) {
+                results[i] = (int) obj3;
+                i++;
+            }
 
-                childArray2 = child2.getJSONArray("specialResults");
+            childArray2 = child2.getJSONArray("specialResults");
 
-                if(childArray2.length() == 0) {
-                    continue;
-                }
-                isSpecial = true;
-                i = 0;
-                specialResults = new int[childArray2.length()];
-                for(Object obj3 : childArray2) {
-                    specialResults[i] = (int) obj3;
-                    i++;
-                }
+            if(childArray2.length() == 0) {
+                isSpecial = false;
+            }
+            i = 0;
+            specialResults = new int[childArray2.length()];
+            for(Object obj3 : childArray2) {
+                specialResults[i] = (int) obj3;
+                i++;
             }
 
             id = Long.parseLong(child.get("drawSystemId").toString());

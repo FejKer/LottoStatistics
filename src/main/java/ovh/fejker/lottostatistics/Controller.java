@@ -34,7 +34,8 @@ public class Controller {
         Parent root = fxmlLoader.load();
 
         MainController mainController = fxmlLoader.getController();
-        mainController.setText1(Main.getRaffleList().get(0).toString());
+
+        mainController.updateLabels(name, size);
 
         stage = (Stage)((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

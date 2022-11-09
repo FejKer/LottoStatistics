@@ -6,22 +6,25 @@ public class Raffle {
     private long drawId;
     private String drawDate;
     private String gameType;
-    private int[] results;
-    private int[] specialResults;
+    private String results;
+    private String specialResults;
 
     public Raffle(long drawId, String drawDate, String gameType, int[] results) {
+        Arrays.sort(results);
         this.drawId = drawId;
         this.drawDate = drawDate;
         this.gameType = gameType;
-        this.results = results;
+        this.results = Arrays.toString(results);
     }
 
     public Raffle(long drawId, String drawDate, String gameType, int[] results, int[] specialResults) {
+        Arrays.sort(specialResults);
+        Arrays.sort(results);
         this.drawId = drawId;
         this.drawDate = drawDate;
         this.gameType = gameType;
-        this.results = results;
-        this.specialResults = specialResults;
+        this.results = Arrays.toString(results);
+        this.specialResults = Arrays.toString(specialResults);
     }
 
     public long getDrawId() {
@@ -36,11 +39,11 @@ public class Raffle {
         return gameType;
     }
 
-    public int[] getResults() {
+    public String getResults() {
         return results;
     }
 
-    public int[] getSpecialResults() {
+    public String getSpecialResults() {
         return specialResults;
     }
 
@@ -51,7 +54,7 @@ public class Raffle {
                     + "drawId=" + drawId
                     + ", drawDate=" + drawDate
                     + ", gameType=" + gameType
-                    + ", results=" + Arrays.toString(results)
+                    + ", results=" + results
                     + '}';
         }
 
@@ -59,8 +62,8 @@ public class Raffle {
                 + "drawId=" + drawId
                 + ", drawDate=" + drawDate
                 + ", gameType=" + gameType
-                + ", results=" + Arrays.toString(results)
-                + ", specialResults=" + Arrays.toString(specialResults)
+                + ", results=" + results
+                + ", specialResults=" + specialResults
                 + '}';
     }
 }
