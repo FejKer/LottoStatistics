@@ -38,6 +38,7 @@ public class MainController {
     @FXML
     private Button generateButton;
     private Stage stage;
+    private static ArrayList<Raffle> raffleList;
 
     @FXML
     public void initialize() {
@@ -59,7 +60,7 @@ public class MainController {
     }
 
     private void updateValues() {
-        ArrayList<Raffle> raffleList = new ArrayList<>();
+        raffleList = new ArrayList<>();
         for(Object s : listView.getSelectionModel().getSelectedItems()) {
             for(Raffle r : Main.getRaffleList()){
                 if(String.valueOf(s).equals(r.getDrawDate())){
@@ -78,19 +79,29 @@ public class MainController {
 
         Controller controller = fxmlLoader.getController();
 
-
         stage = (Stage)((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setTitle("LottoStatistics");
         stage.setScene(scene);
         stage.show();
     }
-    public void onGenerateButtonClick(ActionEvent event) {
+    public void onGenerateButtonClick(ActionEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("popup.fxml"));
+        Parent root = fxmlLoader.load();
 
+        PopupController popupControllercontroller = fxmlLoader.getController();
+
+        stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("LottoStatistics");
+        stage.setScene(scene);
+        stage.show();
     }
     public void updateLabels(String game, int size){
         gameLabel.setText(gameLabel.getText() + game);
         sizeLabel.setText(sizeLabel.getText() + size);
     }
-
+    public static ArrayList<Raffle> getRaffleList(){
+        return raffleList;
+    }
 }

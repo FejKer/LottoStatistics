@@ -5,15 +5,14 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="494.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ovh.fejker.lottostatistics.Popup">
+<AnchorPane prefHeight="494.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ovh.fejker.lottostatistics.PopupController">
    <children>
-      <BarChart layoutX="110.0" layoutY="47.0">
+      <BarChart fx:id="barChart" layoutX="-1.0" layoutY="-1.0" prefHeight="494.0" prefWidth="719.0" title="Występowanie liczb">
         <xAxis>
-          <CategoryAxis label="Liczby" side="BOTTOM" />
+          <CategoryAxis fx:id="categoryAxis" label="Liczby" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" tickLabelGap="5.0" upperBound="50.0" />
+          <NumberAxis fx:id="numberAxis" label="Ilość wystąpień" side="LEFT" tickLabelGap="5.0" upperBound="50.0" />
         </yAxis>
       </BarChart>
    </children>
