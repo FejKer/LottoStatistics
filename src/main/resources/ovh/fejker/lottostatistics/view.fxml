@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ovh.fejker.lottostatistics.Controller">
    <children>
-      <Button layoutX="202.0" layoutY="279.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="56.0" prefWidth="135.0" text="Button" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="202.0" AnchorPane.topAnchor="279.0" />
+      <Button fx:id="button" layoutX="234.0" layoutY="308.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="25.0" prefWidth="72.0" text="Ok" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="308.0" />
+      <ComboBox fx:id="comboBox" layoutX="195.0" layoutY="128.0" prefWidth="150.0" />
+      <TextField fx:id="textField" layoutX="196.0" layoutY="193.0" />
+      <Label layoutX="184.0" layoutY="166.0" text="Podaj ilość losowań do pobrania" />
+      <Label layoutX="238.0" layoutY="102.0" text="Wybierz grę" />
    </children>
 </AnchorPane>

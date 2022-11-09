@@ -4,22 +4,33 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.ArrayList;
 
 public class Main extends Application {
+
+    private static ArrayList<Raffle> raffleList;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("LottoStatistics");
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
-        //new DataScraper("mini-lotto");                          //TODO read from user
+    public static void main(String[] args) throws IOException, InterruptedException, ParseException {
+        raffleList = new ArrayList<Raffle>();
         launch();
+    }
+
+    public static void addToRaffleList(Raffle r){
+        raffleList.add(r);
+    }
+    public static ArrayList<Raffle> getRaffleList(){
+        return raffleList;
     }
 }

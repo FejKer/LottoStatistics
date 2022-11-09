@@ -1,9 +1,7 @@
-package ovh.fejker.lottostatistics;
+/*package ovh.fejker.lottostatistics;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -57,10 +56,10 @@ public class DataScraper {
     private void updateRaffles() throws IOException, ParseException {
         System.out.println("UPDATING");
 
-        JSONParser jsonParser = new JSONParser();
+      //  JSONParser jsonParser = new JSONParser();
         FileReader reader = new FileReader(game + ".json");
-        Object obj = jsonParser.parse(reader);
-        list = (JSONArray) obj;
+       // Object obj = jsonParser.parse(reader);
+      //  list = (JSONArray) obj;
         JSONObject firstObj = null;
         try{
             firstObj = (JSONObject) list.get(0);
@@ -173,3 +172,4 @@ public class DataScraper {
     }
 
 }
+*/

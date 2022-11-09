@@ -9,7 +9,9 @@ module ovh.fejker.lottostatistics {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires org.jsoup;
-    requires json.simple;
+    requires org.json;
+    requires org.apache.commons.io;
+    requires java.net.http;
 
     opens ovh.fejker.lottostatistics to javafx.fxml;
     exports ovh.fejker.lottostatistics;
