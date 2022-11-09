@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="494.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ovh.fejker.lottostatistics.Popup">
+   <children>
+      <BarChart layoutX="110.0" layoutY="47.0">
+        <xAxis>
+          <CategoryAxis label="Liczby" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" tickLabelGap="5.0" upperBound="50.0" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class MainController {
     private TableColumn<Raffle, String> resultsColumn;
     @FXML
     private TableColumn<Raffle, String> extraResultsColumn;
+    @FXML
+    private Button generateButton;
 
     @FXML
     public void initialize() {
@@ -42,6 +45,13 @@ public class MainController {
     }
 
     public void onChange(MouseEvent event) {
+        updateValues();
+    }
+    public void onKeyChange(KeyEvent event) {
+        updateValues();
+    }
+
+    private void updateValues() {
         ArrayList<Raffle> raffleList = new ArrayList<>();
         for(Object s : listView.getSelectionModel().getSelectedItems()) {
             for(Raffle r : Main.getRaffleList()){
@@ -54,9 +64,11 @@ public class MainController {
         tableView.getItems().addAll(raffleList);
     }
 
-    public void onButtonClick(ActionEvent event) {
-        //change game or size
-        //clean arraylist
+    public void onChangeButtonClick(ActionEvent event) {
+
+    }
+    public void onGenerateButtonClick(ActionEvent event) {
+
     }
     public void updateLabels(String game, int size){
         gameLabel.setText(gameLabel.getText() + game);
