@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e9f11b5-7bb8-4236-a67e-c9951b13444f" name="Changes" comment="Raffles' data now is visible in table when selected">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/lottostatistics/PopupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ovh/fejker/lottostatistics/popup.fxml" afterDir="false" />
+    <list default="true" id="0e9f11b5-7bb8-4236-a67e-c9951b13444f" name="Changes" comment="Added popup controller and view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ovh/fejker/lottostatistics/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ovh/fejker/lottostatistics/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ovh/fejker/lottostatistics/mainview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ovh/fejker/lottostatistics/mainview.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
       <workItem from="1667920840894" duration="98000" />
       <workItem from="1667920978920" duration="137000" />
       <workItem from="1667924915690" duration="946000" />
-      <workItem from="1667982723803" duration="24452000" />
+      <workItem from="1667982723803" duration="25091000" />
     </task>
     <task id="LOCAL-00001" summary="Finished working on data scraping. Data can be downloaded from website or updated and appended to existing files.">
       <created>1667315095127</created>
@@ -102,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668010600875</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added popup controller and view">
+      <created>1668012622794</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668012622794</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +127,7 @@
     <MESSAGE value="Finished working on data scraping. Data can be downloaded from website or updated and appended to existing files." />
     <MESSAGE value="Using new data retrieving class, added reading from user how many raffles and which game to fetch" />
     <MESSAGE value="Raffles' data now is visible in table when selected" />
-    <option name="LAST_COMMIT_MESSAGE" value="Raffles' data now is visible in table when selected" />
+    <MESSAGE value="Added popup controller and view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added popup controller and view" />
   </component>
 </project>

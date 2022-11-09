@@ -2,11 +2,17 @@ package ovh.fejker.lottostatistics;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainController {
@@ -31,6 +37,7 @@ public class MainController {
     private TableColumn<Raffle, String> extraResultsColumn;
     @FXML
     private Button generateButton;
+    private Stage stage;
 
     @FXML
     public void initialize() {
@@ -64,8 +71,19 @@ public class MainController {
         tableView.getItems().addAll(raffleList);
     }
 
-    public void onChangeButtonClick(ActionEvent event) {
+    public void onChangeButtonClick(ActionEvent e) throws IOException {
+        Main.getRaffleList().clear();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view.fxml"));
+        Parent root = fxmlLoader.load();
 
+        Controller controller = fxmlLoader.getController();
+
+
+        stage = (Stage)((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setTitle("LottoStatistics");
+        stage.setScene(scene);
+        stage.show();
     }
     public void onGenerateButtonClick(ActionEvent event) {
 
