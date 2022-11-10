@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -22,8 +21,8 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        raffleList = new ArrayList<Raffle>();
+    public static void main(String[] args) {
+        raffleList = new ArrayList<>();
         launch();
     }
 

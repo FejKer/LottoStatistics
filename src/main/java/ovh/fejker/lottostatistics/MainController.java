@@ -89,7 +89,7 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("popup.fxml"));
         Parent root = fxmlLoader.load();
 
-        PopupController popupControllercontroller = fxmlLoader.getController();
+        PopupController popupController = fxmlLoader.getController();
 
         stage = new Stage();
         Scene scene = new Scene(root);

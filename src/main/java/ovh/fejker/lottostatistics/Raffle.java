@@ -3,10 +3,10 @@ package ovh.fejker.lottostatistics;
 import java.util.Arrays;
 
 public class Raffle {
-    private long drawId;
-    private String drawDate;
-    private String gameType;
-    private String results;
+    private final long drawId;
+    private final String drawDate;
+    private final String gameType;
+    private final String results;
     private String specialResults;
 
     public Raffle(long drawId, String drawDate, String gameType, int[] results) {

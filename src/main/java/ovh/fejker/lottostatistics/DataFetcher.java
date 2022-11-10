@@ -6,14 +6,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URI;
-import java.nio.charset.Charset;
-import java.util.Arrays;
+import java.nio.charset.StandardCharsets;
 
 public class DataFetcher {
 
-    private String url;
-    private String game;
-    private int size;
+    private final String game;
+    private final int size;
 
     public DataFetcher(String game, int size) throws IOException {
         this.game = game;
@@ -21,10 +19,10 @@ public class DataFetcher {
         getData();
     }
 
-    public JSONArray getData() throws IOException {
+    public void getData() throws IOException {
         System.out.println("FETCHING DATA");
-        url = "https://www.lotto.pl/api/lotteries/draw-results/by-gametype?game=" + game + "&index=1&size=" + size + "&sort=drawDate&order=DESC";
-        String json = IOUtils.toString(URI.create(url), Charset.forName("UTF-8"));
+        String url = "https://www.lotto.pl/api/lotteries/draw-results/by-gametype?game=" + game + "&index=1&size=" + size + "&sort=drawDate&order=DESC";
+        String json = IOUtils.toString(URI.create(url), StandardCharsets.UTF_8);
         JSONObject parent = new JSONObject(json);
         System.out.println("PARENT" + parent);
         JSONArray array = new JSONArray(parent.getJSONArray("items"));
@@ -75,6 +73,5 @@ public class DataFetcher {
             }
         }
 
-        return array;
     }
 }

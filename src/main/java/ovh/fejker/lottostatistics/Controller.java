@@ -21,13 +21,10 @@ public class Controller {
     private ComboBox comboBox;
     @FXML
     private TextField textField;
-    private int size;
-    private String name;
-    private Stage stage;
 
     public void onButtonClick(ActionEvent e) throws IOException {
-        size = Integer.parseInt(textField.getText());
-        name = (String) comboBox.getValue();
+        int size = Integer.parseInt(textField.getText());
+        String name = (String) comboBox.getValue();
         new DataFetcher(name, size);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainview.fxml"));
@@ -37,7 +34,7 @@ public class Controller {
 
         mainController.updateLabels(name, size);
 
-        stage = (Stage)((Node) e.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setTitle("LottoStatistics");
         stage.setScene(scene);
