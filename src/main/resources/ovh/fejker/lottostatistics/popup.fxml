@@ -12,7 +12,7 @@
           <CategoryAxis fx:id="categoryAxis" label="Liczby" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="numberAxis" autoRanging="false" label="Ilość wystąpień" minorTickCount="1" side="LEFT" tickLabelGap="5.0" tickUnit="1.0" upperBound="50.0" />
+          <NumberAxis fx:id="numberAxis" label="Ilość wystąpień" minorTickCount="1" side="LEFT" tickLabelGap="5.0" tickLength="5.0" tickUnit="1.0" upperBound="50.0" />
         </yAxis>
       </BarChart>
    </children>
