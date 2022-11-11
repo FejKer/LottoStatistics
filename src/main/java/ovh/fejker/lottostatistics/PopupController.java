@@ -16,10 +16,13 @@ public class PopupController {
 
     @FXML
     public void initialize() {
+        System.out.println("INIT BARCHART");
         XYChart.Series set = new XYChart.Series();
-        for(Raffle raffle : MainController.getRaffleList()){
-            //TODO count number appearance
+        for(int s : Raffle.getOccurrence().keySet()){
+            System.out.println(s + " " + Raffle.getOccurrence().get(s));
+            set.getData().add(new XYChart.Data(String.valueOf(s), Raffle.getOccurrence().get(s)));
         }
+        barChart.getData().addAll(set);
     }
 
 }

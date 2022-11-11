@@ -74,6 +74,7 @@ public class MainController {
 
     public void onChangeButtonClick(ActionEvent e) throws IOException {
         Main.getRaffleList().clear();
+        Raffle.getOccurrence().clear();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view.fxml"));
         Parent root = fxmlLoader.load();
 
